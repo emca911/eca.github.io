@@ -43,6 +43,12 @@ footer{
 body {
 	background-color: #ccd3ee;
 }
+{
+       html, #container, .inner { background-color:#ccd3ee;}
+       html {
+       background:url(background.jpg) center center no-repeat fixed;
+       background-size:cover;
+}
 #container{
 	position: relative;
 	background-color: #ccd3ee;
