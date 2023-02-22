@@ -37,19 +37,19 @@
 
       /* this is the right answer*/
          if (sen_fin == "Spanish" ) {
-            document.write("<body bgcolor='#FFA233'>");
+            document.write("<body bgcolor='#ecc6d9'>");
             document.write ('<img src = "selenadancing.gif" width=498 height=371>');
          }
 
       /*this could also be a right answer*/ 
          else if (sen_fin == "spanish" ) {
-            document.write("<body bgcolor='#EDB469'>");
+            document.write("<body bgcolor='#ecc6d9'>");
             document.write('<img src = "selenadancing.gif" width=486 height= 394>');
          }
             
       /*this is for all other text inputs*/ 
          else {
-            document.write("<body bgcolor='#C23D10'>");
+            document.write("<body bgcolor='#c6538c'>");
             document.write("You're thinking of the wrong Selena!");
             }
 
@@ -62,14 +62,12 @@
 <body>
 <h2>QUEEN OF TEJANO</h2>
 
-<p id="movie">What style of music is Selena famous for?</p>
+<p id="selena">What style of music is Selena famous for?</p>
 <button onclick="myFunction()">Salsa</button>
-
-<p id="demo"></p>
 
 <script>
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Try again!";
+  document.getElementById("selena").innerHTML = "Try again!";
 }
 </script><button onclick="myFunction()">Cumbia</button>
 
@@ -77,7 +75,7 @@ function myFunction() {
 
 <script>
 function myFunction() {
-  document.getElementById("demo").innerHTML = "WHOO HOO!";
+  document.getElementById("selena").innerHTML = "WHOO HOO!";
 }
 </script>
 
