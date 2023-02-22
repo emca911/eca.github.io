@@ -25,29 +25,23 @@
 </style>
    
    
-   <title> Jaymes JS Variable Example</title>
+   <title>Elise Cruz Aragon | Java Script Variable</title>
+      
       <script type="text/javascript"> 
-         
-
-      /*  declaration of variables and some variable assignment and writing to the web page*/
          var sen_fin;
 
          sen_fin = prompt("What language did Selena sing in?");
    
-
-      /* this is the right answer*/
          if (sen_fin == "Spanish" ) {
             document.write("<body bgcolor='#ecc6d9'>");
             document.write ('<img src = "selenadancing.gif" width=498 height=371>');
          }
 
-      /*this could also be a right answer*/ 
          else if (sen_fin == "spanish" ) {
             document.write("<body bgcolor='#ecc6d9'>");
             document.write('<img src = "selenadancing.gif" width=486 height= 394>');
          }
             
-      /*this is for all other text inputs*/ 
          else {
             document.write("<body bgcolor='#c6538c'>");
             document.write("You're thinking of the wrong Selena!");
@@ -61,21 +55,24 @@
 
 <body>
 <h2>QUEEN OF TEJANO</h2>
-
-<p id="selena">What style of music is Selena famous for?</p>
+What style of music is Selena known for?
 <button onclick="myFunction()">Salsa</button>
 
+<p id="sel"></p>
+
 <script>
 function myFunction() {
-  document.getElementById("selena").innerHTML = "Try again!";
+  document.getElementById("sel").innerHTML = "Try Again!";
 }
-</script><button onclick="myFunction()">Cumbia</button>
+</script>
+<br><br>
+<button onclick="myFunction()">Cumbia</button>
 
-<p id="demo"></p>
+<p id="selena2"></p>
 
 <script>
 function myFunction() {
-  document.getElementById("selena").innerHTML = "WHOO HOO!";
+  document.getElementById("selena2").innerHTML = "Great Job!";
 }
 </script>
 
