@@ -14,14 +14,14 @@ body{
     height: 20px;
     width: auto;
     background:fixed;
-    background-color:#ffffe6;
+    background-color:#efeff5;
 
 }
 
 
 
 .topnav {
-    background-color:#333300; 
+    background-color:#e0e0eb; 
     overflow: hidden;
 
 }
@@ -29,7 +29,7 @@ body{
 
 
 .topnav a{
-    float: left;
+    float: center;
     color:white;
     text-align: center;
     padding: 14px 16px;
@@ -44,7 +44,7 @@ body{
 }
 
 .topnav a.active {
-    background-color:#999900;
+    background-color:#8282b0;
     color: white;
 
 }
@@ -95,8 +95,8 @@ body, html {
     height: 100%;
 }
 
-.hero-image {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("");
+.hodor {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("hodor.jpg");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -105,7 +105,7 @@ body, html {
 
 }
 
-.hero-text{
+.hodor-text{
     float:relative;
     text-align: right;
     position: absolute;
@@ -116,14 +116,14 @@ body, html {
 
 }
 
-.hero-text button:hover{
+.hodor-text button:hover{
     background-color:#005075;
     color:white;
 
 }
 
-.blue-bar{
-    background-color: #0073a8;
+.darkblue-bar{
+    background-color: #32324e;
     overflow: hidden;
     font-size: x-small;
     
@@ -131,7 +131,7 @@ body, html {
 
 .below-bar-left{
     float: left;
-    width:50%;
+    width:60%;
     padding:15px;
 
 }
@@ -149,7 +149,7 @@ h4 a:link{
 }
 
 h4 a:hover{
-    color:#0073a8;
+    color:#63639c;
     background-color: transparent;
     text-decoration: underline;
 }
