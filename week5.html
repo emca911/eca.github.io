@@ -1,0 +1,36 @@
+
+<html>
+   <head>   
+      <script type = "text/javascript">
+         function sayHello() {
+            /*document.write (name + " is " + age + " years old."); */
+            var name, age;
+            
+            name = document.simpleForm.fname.value;
+            age = document.simpleForm.ageNum.value;
+
+            document.getElementById("Output").innerHTML = "Hello, my name is " + name + 
+                " and I am " + age + " years old.";
+
+         }
+      </script>      
+   </head>
+   
+   <body>
+      <p>Click the following button to call the function</p>      
+      <form name = "simpleForm">
+          
+        <br>
+        Name
+        <br>
+        <input type="text" id="fname" name="fname"><br>
+        <br>
+        Age
+        <br>
+        <input type="number" name="ageNum" min="0" size="3" placeholder="0"><br>
+        <br>
+        <input type = "button" onclick = "sayHello()" value = "Say Hello">
+      </form>      
+      <p id = "Output"> This is where the output will go. </p>
+   </body>
+</html>
