@@ -11,148 +11,263 @@
 	<body>
 		<div id= "container">
 			<div id="banner"><center><h2>Elise Cruz Aragon | Web Programming I</h2></center>
-			</div>
-<script>
-    <--Practice Questions-->
-    const Questions = [{
-        id: 0,
-        q: "The ''fly the nest'' approach allows for teachers to do which of the following when scaffolding instruction?",
-        a: [{ text: "motivate students through simple concepts", isCorrect: false },
-            { text: "slowly take away support", isCorrect: true },
-            { text: "chunking concepts together", isCorrect: false },
-            { text: "model behaviors to show students what is expected", isCorrect: false }
-        ]
-    
-    },
-    {
-        id: 1,
-        q: "Which of the sections of "IDEA" sets the guidelines for an individualized education plan or IEP?",
-        a: [{ text: "Part A", isCorrect: false, isSelected: false },
-            { text: "Part B", isCorrect: true },
-            { text: "Part C", isCorrect: false },
-            { text: "Part D", isCorrect: false }
-        ]
-    
-    },
-    {
-        id: 2,
-        q: "When a teacher considers the validity of a behavior to determine if it is problematic enough to take action, which of the following questions should the teacher not ask about the behavior?",
-        a: [{ text: "Will a reward system eliminate the behavior?", isCorrect: true },
-            { text: "Does the behavior impede on the student's learning?", isCorrect: false },
-            { text: " Have appropriate interventions been attempted?", isCorrect: false },
-            { text: " Is the behavior a result of a cultural difference?", isCorrect: false }
-        ]
+			</div><div class="panel">
+        <div class="result">
+
+        </div>
+        <div class="question-container" id="question">
+            Question goes here.
+        </div>
+        <div class="option-container">
+            <button class="option" onclick="" id="op1">option1</button>
+
+            <button class="option" id="op2">option2</button>
+
+            <button class="option" id="op3">option3</button>
+
+            <button class="option" id="op4">option4</button>
+        </div>
+        <div class="navigation">
+            <button class="evaluate">Evaluate</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<style>
+    body{
+    padding: 0;
+    margin: 0;    
+    width:100vw;
+    height: 100vh;    
+    }
+    .panel{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .question-container{
+    margin: 10px;
+    padding: 5px;
+    width: 80vw;
+    height: 10vh;
+    background-color: #c7dddf;
+    font-size: x-large;
+    text-align: center;
     
     }
+    .result{
+    margin: 10px;
+    padding: 5px;
+    width:80vw;
+    height: 10vh;
+    text-align: center;
+    font-size: 50px;
     
-    ]
-    
-    // Set start
-    var start = true;
-    
-    // Iterate
-    function iterate(id) {
-    
-    // Getting the result display section
-    var result = document.getElementsByClassName("result");
-    result[0].innerText = "";
-    
-    // Getting the question
-    const question = document.getElementById("question");
-    
-    
-    // Setting the question text
-    question.innerText = Questions[id].q;
-    
-    // Getting the options
-    const op1 = document.getElementById('op1');
-    const op2 = document.getElementById('op2');
-    const op3 = document.getElementById('op3');
-    const op4 = document.getElementById('op4');
-    
-    
-    // Providing option text 
-    op1.innerText = Questions[id].a[0].text;
-    op2.innerText = Questions[id].a[1].text;
-    op3.innerText = Questions[id].a[2].text;
-    op4.innerText = Questions[id].a[3].text;
-    
-    // Providing the true or false value to the options
-    op1.value = Questions[id].a[0].isCorrect;
-    op2.value = Questions[id].a[1].isCorrect;
-    op3.value = Questions[id].a[2].isCorrect;
-    op4.value = Questions[id].a[3].isCorrect;
-    
-    var selected = "";
-    
-    // Show selection for op1
-    op1.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightgoldenrodyellow";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightskyblue";
-        selected = op1.value;
-    })
-    
-    // Show selection for op2
-    op2.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightgoldenrodyellow";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightskyblue";
-        selected = op2.value;
-    })
-    
-    // Show selection for op3
-    op3.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightgoldenrodyellow";
-        op4.style.backgroundColor = "lightskyblue";
-        selected = op3.value;
-    })
-    
-    // Show selection for op4
-    op4.addEventListener("click", () => {
-        op1.style.backgroundColor = "lightskyblue";
-        op2.style.backgroundColor = "lightskyblue";
-        op3.style.backgroundColor = "lightskyblue";
-        op4.style.backgroundColor = "lightgoldenrodyellow";
-        selected = op4.value;
-    })
-    
-    // Grabbing the evaluate button
-    const evaluate = document.getElementsByClassName("evaluate");
-    
-    // Evaluate method
-    evaluate[0].addEventListener("click", () => {
-        if (selected == "true") {
-            result[0].innerHTML = "True";
-            result[0].style.color = "green";
-        } else {
-            result[0].innerHTML = "False";
-            result[0].style.color = "red";
-        }
-    })
+    }
+    .option-container{
+    display: flex;
+    justify-content: space-around; 
+    margin: 10px;
+    padding: 5px;
+    width: 80vw;
+    height: 20vh;
+    background-color: #9eb1b3;   
+      
+    }
+    .option{    
+    padding: 10px;
+    width: 15vw;
+    height: 10vh;
+    font-size: larger;
+    background-color: lightskyblue;
+    border-radius: 25%;
+    }
+    .option:hover{
+    background-color: lightgoldenrodyellow;
+    }
+    .navigation{
+    width: 80vw;
+    height: 10vh;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    background-color:#c7dddf;
     }
     
-    if (start) {
-    iterate("0");
+    .evaluate,.next{
+    width:30vw;
+    height: 8vh;
+    padding: 5px;
+    font-size: larger;
     }
-    
-    // Next button and method
-    const next = document.getElementsByClassName('next')[0];
-    var id = 0;
-    
-    next.addEventListener("click", () => {
-    start = false;
-    if (id < 2) {
-        id++;
-        iterate(id);
-        console.log(id);
+    .evaluate{
+      
+    background-color: #50DBB4;
     }
-    
-    })
-    
-</script>
+    .next{
+    color: white;
+    background-color: #BF3325;
+    }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <div id="banner">
+            <center>
+                <h2>Elise Cruz Aragon | Web Programming I</h2>
+            </center>
+        </div>
+        <script>
+            <--Practice Questions-->
+            const Questions = [{
+                id: 0,
+                q: "The ''fly the nest'' approach allows for teachers to do which of the following when scaffolding instruction?",
+                a: [{ text: "motivate students through simple concepts", isCorrect: false },
+                    { text: "slowly take away support", isCorrect: true },
+                    { text: "chunking concepts together", isCorrect: false },
+                    { text: "model behaviors to show students what is expected", isCorrect: false }
+                ]
+            
+            },
+            {
+                id: 1,
+                q: "Which of the sections of "IDEA" sets the guidelines for an individualized education plan or IEP?",
+                a: [{ text: "Part A", isCorrect: false, isSelected: false },
+                    { text: "Part B", isCorrect: true },
+                    { text: "Part C", isCorrect: false },
+                    { text: "Part D", isCorrect: false }
+                ]
+            
+            },
+            {
+                id: 2,
+                q: "When a teacher considers the validity of a behavior to determine if it is problematic enough to take action, which of the following questions should the teacher not ask about the behavior?",
+                a: [{ text: "Will a reward system eliminate the behavior?", isCorrect: true },
+                    { text: "Does the behavior impede on the student's learning?", isCorrect: false },
+                    { text: " Have appropriate interventions been attempted?", isCorrect: false },
+                    { text: " Is the behavior a result of a cultural difference?", isCorrect: false }
+                ]
+            
+            }
+            
+            ]
+            
+            // Set start
+            var start = true;
+            
+            // Iterate
+            function iterate(id) {
+            
+            // Getting the result display section
+            var result = document.getElementsByClassName("result");
+            result[0].innerText = "";
+            
+            // Getting the question
+            const question = document.getElementById("question");
+            
+            
+            // Setting the question text
+            question.innerText = Questions[id].q;
+            
+            // Getting the options
+            const op1 = document.getElementById('op1');
+            const op2 = document.getElementById('op2');
+            const op3 = document.getElementById('op3');
+            const op4 = document.getElementById('op4');
+            
+            
+            // Providing option text 
+            op1.innerText = Questions[id].a[0].text;
+            op2.innerText = Questions[id].a[1].text;
+            op3.innerText = Questions[id].a[2].text;
+            op4.innerText = Questions[id].a[3].text;
+            
+            // Providing the true or false value to the options
+            op1.value = Questions[id].a[0].isCorrect;
+            op2.value = Questions[id].a[1].isCorrect;
+            op3.value = Questions[id].a[2].isCorrect;
+            op4.value = Questions[id].a[3].isCorrect;
+            
+            var selected = "";
+            
+            // Show selection for op1
+            op1.addEventListener("click", () => {
+                op1.style.backgroundColor = "lightgoldenrodyellow";
+                op2.style.backgroundColor = "lightskyblue";
+                op3.style.backgroundColor = "lightskyblue";
+                op4.style.backgroundColor = "lightskyblue";
+                selected = op1.value;
+            })
+            
+            // Show selection for op2
+            op2.addEventListener("click", () => {
+                op1.style.backgroundColor = "lightskyblue";
+                op2.style.backgroundColor = "lightgoldenrodyellow";
+                op3.style.backgroundColor = "lightskyblue";
+                op4.style.backgroundColor = "lightskyblue";
+                selected = op2.value;
+            })
+            
+            // Show selection for op3
+            op3.addEventListener("click", () => {
+                op1.style.backgroundColor = "lightskyblue";
+                op2.style.backgroundColor = "lightskyblue";
+                op3.style.backgroundColor = "lightgoldenrodyellow";
+                op4.style.backgroundColor = "lightskyblue";
+                selected = op3.value;
+            })
+            
+            // Show selection for op4
+            op4.addEventListener("click", () => {
+                op1.style.backgroundColor = "lightskyblue";
+                op2.style.backgroundColor = "lightskyblue";
+                op3.style.backgroundColor = "lightskyblue";
+                op4.style.backgroundColor = "lightgoldenrodyellow";
+                selected = op4.value;
+            })
+            
+            // Grabbing the evaluate button
+            const evaluate = document.getElementsByClassName("evaluate");
+            
+            // Evaluate method
+            evaluate[0].addEventListener("click", () => {
+                if (selected == "true") {
+                    result[0].innerHTML = "True";
+                    result[0].style.color = "green";
+                } else {
+                    result[0].innerHTML = "False";
+                    result[0].style.color = "red";
+                }
+            })
+            }
+            
+            if (start) {
+            iterate("0");
+            }
+            
+            // Next button and method
+            const next = document.getElementsByClassName('next')[0];
+            var id = 0;
+            
+            next.addEventListener("click", () => {
+            start = false;
+            if (id < 2) {
+                id++;
+                iterate(id);
+                console.log(id);
+            }
+            
+            })
+            
+        </script>
 </html>
