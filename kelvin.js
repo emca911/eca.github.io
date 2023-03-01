@@ -11,14 +11,14 @@ function updateHtml(text,id){
 }
 
 
-function convertKToF(k) {
-  var f = 1.8 * (k - 273) + 322;
+function convertCToF(c) {
+  var f = c * (9 / 5) + 32;
   return f;
 }
 
-function convertFToK(f) {
-  var k = (f + 459.67) * 5 / 9;
-  return k;
+function convertFToC(f) {
+  var c = (f - 32) * 5 / 9;
+  return c;
 }
 
 function sequnce(){
@@ -27,22 +27,22 @@ function sequnce(){
   updateHtml("Result: "+ convertedVal + activeSuffix,'result')
 }
 
-var activeFn = convertKToF;
-var activeId = 'kInput';
+var activeFn = convertCToF;
+var activeId = 'cInput';
 var activeSuffix = "℉"
 
 getElm('cInput').onfocus = function(){
-  activeFn = convertKToF;
-  activeId = 'kInput';
+  activeFn = convertCToF;
+  activeId = 'cInput';
   activeSuffix = "℉"
 }
 
 getElm('fInput').onfocus  = function(){
-  activeFn = convertKToF;
+  activeFn = convertCToF;
   activeId = 'fInput';
-  activeSuffix = "K"
+  activeSuffix = "℃"
 }
 
-getElm("kInput").oninput = sequnce;
+getElm("cInput").oninput = sequnce;
 getElm("fInput").oninput = sequnce;
 getElm("submit").oninput = sequnce;
