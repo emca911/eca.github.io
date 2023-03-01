@@ -7,56 +7,20 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
 		
-
-
-<script type="text/javascript">
-             /*changing fahrenheit to kelvin, because it's kelvin*/
-
-             function ItsGettingHotInHere (degreesKelvin)
-             {
-                 var degree_fah;
-                 var name;
-				 
-                 name=document.degree_kel.fname.value + " " +  document.degree_kel.lname.value;
-            
-                 /*Formula for F to K is -32 + 273.15. At 0 degrees Fahrenheit, we only need to add 255.372 to get our output*/
-
-                degree_fah = document.degree_kel.MaxAuth.value + 255.372;
-               /*degree_fah = degree_fah + degree_fah * degreesKelvin;*/
-                
-                
-                //alert("Someone open a window, it's too hot." + degree_fah + " in Kelvin");
-                //write it to the page;
-
-                document.getElementById("KelvinTotal").innerHTML = "<h3>" + name + ", in Kelvin, it would be " + degree_fah + " degrees.</h3>";
-
-                } 
-
-        </script>
+        <meta charset="UTF-8">
+        <title> Kelvin Can't Wait</title>
     </head>
-    
     <body>
-             /*form to make it kelvin, because kelvin can't wait*/
-        <div class="TAW">
-        <h2>Fahrenheit to Kelvin</h2>
-        <p>Ever wonder how hot it is in Kelvin?</p>
-        <form name="degree_kel">
-        <br>
-        <label for="fname">First Name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last Name:</label><br>
-        <input type="text" id="lname" name="lname">
-        <br>
-        <br>
-        Enter the degrees Fahrenheit you want to convert.<br>
-        <!-- -->
-        <!-- -->
-        <input type="number" name="MaxAuth" min="0" size="3" placeholder="0">
-        <br><br>
-        <input type="button" name="button" onClick="ItsGettingHotInHere()" value="Click to Calculate">
-
-        <p id="KelvinTotal">Someone open a window, it's too hot.</p>
-    </form>
+        <h1>Fahreheint to Kelvin</h1>
+        <div id="inputs">
+            <input id="kInput" placeholder="kelvin"/>
+            <input id="fInput" placeholder="farenheit"/>
+        </div>
+        <button id="submit">Convert</button>
+        <h1 id="result">Result:</h1>
+        <script src="kelvin.js"></script>
+    </body>
+</html>
    
 </body>
 </html>
