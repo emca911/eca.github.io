@@ -6,172 +6,58 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
+		
+
+<script type = "text/javascript">
+	function sayHello() {
+            /*document.write (name + " is " + age + " years old."); */
+            var name, age;
+            
+            name = document.simpleForm.fname.value;
+            age = document.simpleForm.ageNum.value;
+
+            document.getElementById("Output").innerHTML = "Hello, my name is " + name + 
+                " and I am " + age + " years old.";
+
+         }
+      </script>      
+   </head>
 	</head>
 <body>
-  <h1>Quiz on Important Facts</h1>
-<div class="quiz-container">
-  <div id="quiz"></div>
-</div>
-<button id="previous">Previous Question</button>
-<button id="next">Next Question</button>
-<button id="submit">Submit Quiz</button>
-<div id="results"></div>
+        <p>Click the following button to call the function</p>      
+      <form name = "simpleForm">
+          
+        <br>
+        Name
+        <br>
+        <input type="text" id="fname" name="fname"><br>
+        <br>
+        Age
+        <br>
+        <input type="number" name="ageNum" min="0" size="3" placeholder="0"><br>
+        <br>
+        <input type = "button" onclick = "sayHello()" value = "Say Hello">
+      </form>      
+      <p id = "Output"> This is where the output will go. </p>
 	
-	
-(function(){
-  // Functions
-  function buildQuiz(){
-    // variable to store the HTML output
-    const output = [];
+	<form action="/action_page.php" target="_blank" method="post" >
+        <div class="container" >
+            <h2>Subscribe to our Newsletter </h2>
+            <p>Potter Elementary sends out a monthly newsletter with information on events and functions within the school. Fill out the information below if you would like to receive our newsletter. </p>
+            </div>
 
-    // for each question...
-    myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
-
-        // variable to store the list of possible answers
-        const answers = [];
-
-        // and for each available answer...
-        for(letter in currentQuestion.answers){
-
-          // ...add an HTML radio button
-          answers.push(
-            `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
-        }
-
-        // add this question and its answers to the output
-        output.push(
-          `<div class="slide">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
-        );
-      }
-    );
-
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
-  }
-
-  function showResults(){
-
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-
-    // keep track of user's answers
-    let numCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-      // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
-
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
-    });
-
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  }
-
-  function showSlide(n) {
-    slides[currentSlide].classList.remove('active-slide');
-    slides[n].classList.add('active-slide');
-    currentSlide = n;
-    if(currentSlide === 0){
-      previousButton.style.display = 'none';
-    }
-    else{
-      previousButton.style.display = 'inline-block';
-    }
-    if(currentSlide === slides.length-1){
-      nextButton.style.display = 'none';
-      submitButton.style.display = 'inline-block';
-    }
-    else{
-      nextButton.style.display = 'inline-block';
-      submitButton.style.display = 'none';
-    }
-  }
-
-  function showNextSlide() {
-    showSlide(currentSlide + 1);
-  }
-
-  function showPreviousSlide() {
-    showSlide(currentSlide - 1);
-  }
-
-  // Variables
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('submit');
-  const myQuestions = [
-    {
-      question: "Who invented JavaScript?",
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Which one of these is a JavaScript package manager?",
-      answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Which tool can you use to ensure code quality?",
-      answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
-      },
-      correctAnswer: "d"
-    }
-  ];
-
-  // Kick things off
-  buildQuiz();
-
-  // Pagination
-  const previousButton = document.getElementById("previous");
-  const nextButton = document.getElementById("next");
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
-
-  // Show the first slide
-  showSlide(currentSlide);
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-  previousButton.addEventListener("click", showPreviousSlide);
-  nextButton.addEventListener("click", showNextSlide);
-})();
+            <div class="container" style="background: color #d9e4ec">
+                <input type="text" placeholder="First Name" firstname="First Name" required>
+                <input type="text" placeholder="Last Name" lastname="Last Name" required>
+                <input type="text" placeholder="Child's Name" childname="Child's Name" required>
+                <input type="text" placeholder="Email address" name="mail" required>
+                <label>
+                <input type="checkbox" checked="checked" name="subscribe"> Monthly Newsletter
+            </label>
+        </div>     
+        <div class="container">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
 </body>
 </html>
