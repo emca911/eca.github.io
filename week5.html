@@ -8,56 +8,55 @@
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
 		
 
-<script type = "text/javascript">
-	function sayHello() {
-            /*document.write (name + " is " + age + " years old."); */
-            var name, age;
+
+<script type="text/javascript">
+             /*changing fahrenheit to kelvin, because it's kelvin*/
+
+             function ItsGettingHotInHere (degreesKelvin)
+             {
+                 var degree_fah;
+                 var name;
+				 
+                 name=document.degree_kel.fname.value + " " +  document.degree_kel.lname.value;
             
-            name = document.simpleForm.fname.value;
-            age = document.simpleForm.ageNum.value;
+                 /*Formula for F to K is -32 + 273.15. At 0 degrees Fahrenheit, we only need to add 255.372 to get our output*/
 
-            document.getElementById("Output").innerHTML = "Hello, my name is " + name + 
-                " and I am " + age + " years old.";
+                degree_fah = document.degree_kel.MaxAuth.value + 255.372;
+               /*degree_fah = degree_fah + degree_fah * degreesKelvin;*/
+                
+                
+                //alert("Someone open a window, it's too hot." + degree_fah + " in Kelvin");
+                //write it to the page;
 
-         }
-      </script>      
-   </head>
-	</head>
-<body>
-        <p>Click the following button to call the function</p>      
-      <form name = "simpleForm">
-          
+                document.getElementById("KelvinTotal").innerHTML = "<h3>" + name + ", in Kelvin, it would be " + degree_fah + " degrees.</h3>";
+
+                } 
+
+        </script>
+    </head>
+    
+    <body>
+             /*form to make it kelvin, because kelvin can't wait*/
+        <div class="TAW">
+        <h2>Fahrenheit to Kelvin</h2>
+        <p>Ever wonder how hot it is in Kelvin?</p>
+        <form name="degree_kel">
         <br>
-        Name
-        <br>
+        <label for="fname">First Name:</label><br>
         <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname">
         <br>
-        Age
         <br>
-        <input type="number" name="ageNum" min="0" size="3" placeholder="0"><br>
-        <br>
-        <input type = "button" onclick = "sayHello()" value = "Say Hello">
-      </form>      
-      <p id = "Output"> This is where the output will go. </p>
-	
-	<form action="/action_page.php" target="_blank" method="post" >
-        <div class="container" >
-            <h2>Subscribe to our Newsletter </h2>
-            <p>Potter Elementary sends out a monthly newsletter with information on events and functions within the school. Fill out the information below if you would like to receive our newsletter. </p>
-            </div>
+        Enter the degrees Fahrenheit you want to convert.<br>
+        <!-- -->
+        <!-- -->
+        <input type="number" name="MaxAuth" min="0" size="3" placeholder="0">
+        <br><br>
+        <input type="button" name="button" onClick="ItsGettingHotInHere()" value="Click to Calculate">
 
-            <div class="container" style="background: color #d9e4ec">
-                <input type="text" placeholder="First Name" firstname="First Name" required>
-                <input type="text" placeholder="Last Name" lastname="Last Name" required>
-                <input type="text" placeholder="Child's Name" childname="Child's Name" required>
-                <input type="text" placeholder="Email address" name="mail" required>
-                <label>
-                <input type="checkbox" checked="checked" name="subscribe"> Monthly Newsletter
-            </label>
-        </div>     
-        <div class="container">
-            <input type="submit" value="Submit">
-        </div>
+        <p id="KelvinTotal">Someone open a window, it's too hot.</p>
     </form>
+   
 </body>
 </html>
