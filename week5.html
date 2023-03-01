@@ -12,96 +12,147 @@
 		<div id= "container">
 			<div id="banner"><center><h2>Elise Cruz Aragon | Web Programming I</h2></center>
 			</div>
-<div class="quiz_container">
-		<!--ESE QUIZ-->
-		<h1>How Ready Are You For the FTCE ESE?</h1>
-		<form name = "quizForm" >
-		
-			<!--question1-->
-			<p>The ''fly the nest'' approach allows for teachers to do which of the following when scaffolding instruction?</p>
-			<div class="radio-button">
-  				<input type="radio" id="motivate" name="q1" value="motivate">
-  				<label for="motivate">motivate students through simple concepts</label><br>
-		  		<input type="radio" id="take away" name="q1" value="take away">
-  				<label for="take away">slowly take away support</label><br>
-				<input type="radio" id="chunking" name="q1" value="chunking">
- 				<label for="chunking">chunking concepts together</label><br>
-		  		<input type="radio" id="model" name="q1" value="model">
-  				<label for="model">model behaviors to show students what is expected</label><br><br>
-			</div>	
-		
-			<div class="radio-button">
-			<!--question2-->
-				<p>Which of the sections of "IDEA" sets the guidelines for an individualized education plan or IEP?</p>
-	  			<input type="radio" id="A" name="q2" value="A">
-  				<label for="A">Part Am</label><br>
-  				<input type="radio" id="B" name="q2" value="B">
-  				<label for="B">Part B</label><br>
-				<input type="radio" id="C" name="q2" value="C">
-  				<label for="C">Part C</label><br>
-  	 			<input type="radio" id="D" name="q3" value="D">
-  				<label for="D">Part D</label><br><br>
-			</div>
-	
-			<div class="radio-button">
-			<!--question3-->
-				<p>When a teacher considers the validity of a behavior to determine if it is problematic enough to take action, which of the following questions should the teacher not ask about the behavior?</p>
-	  			<input type="radio" id="rewards" name="q3" value="rewards">
-  				<label for="rewards">Will a reward system eliminate the behavior?</label><br>
-  				<input type="radio" id="impede" name="q3" value="impede">
-  				<label for="impede">Does the behavior impede on the student's learning?</label><br>
-				<input type="radio" id="interventions" name="q3" value="interventions">
-  				<label for="interventions">Have appropriate interventions been attempted?</label><br>
-  	 			<input type="radio" id="culture" name="q3" value="culture">
-  				<label for="culture">Is the behavior a result of a cultural difference?</label><br><br>
-			</div>
-			
-			<!--submit form-->
-			<input type = "button" onclick = "quizGrade()" value = "Submit Quiz">
-		</form> 
-	
-		<!--function to grade quiz and display results-->
-		<script type = "text/javascript">
-    		function quizGrade() {
-            
-			/*form and question variables */
-          		var question1, question2, question3, grade1, grade2, grade3, total, wrong;
-            		question1 = document.quizForm.q1.value;
-           		question2 = document.quizForm.q2.value;
-			question3 = document.quizForm.q3.value;
-			
-			
-			 /*quiz grading */
-			if (q1 == "take away"){ 
-			grade1=1;
-			}
-			else{
-			grade1=0
-			document.getElementById("results1").innerHTML =  " #1 ";	
-			}
-			if (q2 == "b"){ 
-			grade2=1;
-			}
-			else{
-			grade2=0
-			document.getElementById("results2").innerHTML =  " #2 ";
-			}
-			if (q3 == "rewards"){ 
-			grade3=1;
-			}
-			else{
-			grade3=0
-			document.getElementById("results3").innerHTML =  " #3 ";
-			}
- 			total = grade1 + grade2 + grade3;
-            
-			/*display results */
-			document.getElementById("Output").innerHTML = " congrats! you scored " + total + " out of 3";
-			}		
-		</script>      
-	</div>
-	
-	<!--display results -->
-      <p id = "Output"> What will your final score be? </p>
-	</div>
+<script>
+    // Questions will be asked
+    const Questions = [{
+        id: 0,
+        q: "What is capital of India?",
+        a: [{ text: "gandhinagar", isCorrect: false },
+            { text: "Surat", isCorrect: false },
+            { text: "Delhi", isCorrect: true },
+            { text: "mumbai", isCorrect: false }
+        ]
+    
+    },
+    {
+        id: 1,
+        q: "What is the capital of Thailand?",
+        a: [{ text: "Lampang", isCorrect: false, isSelected: false },
+            { text: "phuket", isCorrect: false },
+            { text: "Ayutthaya", isCorrect: false },
+            { text: "Bangkok", isCorrect: true }
+        ]
+    
+    },
+    {
+        id: 2,
+        q: "What is the capital of Gujarat",
+        a: [{ text: "surat", isCorrect: false },
+            { text: "vadodara", isCorrect: false },
+            { text: "gandhinagar", isCorrect: true },
+            { text: "rajkot", isCorrect: false }
+        ]
+    
+    }
+    
+    ]
+    
+    // Set start
+    var start = true;
+    
+    // Iterate
+    function iterate(id) {
+    
+    // Getting the result display section
+    var result = document.getElementsByClassName("result");
+    result[0].innerText = "";
+    
+    // Getting the question
+    const question = document.getElementById("question");
+    
+    
+    // Setting the question text
+    question.innerText = Questions[id].q;
+    
+    // Getting the options
+    const op1 = document.getElementById('op1');
+    const op2 = document.getElementById('op2');
+    const op3 = document.getElementById('op3');
+    const op4 = document.getElementById('op4');
+    
+    
+    // Providing option text 
+    op1.innerText = Questions[id].a[0].text;
+    op2.innerText = Questions[id].a[1].text;
+    op3.innerText = Questions[id].a[2].text;
+    op4.innerText = Questions[id].a[3].text;
+    
+    // Providing the true or false value to the options
+    op1.value = Questions[id].a[0].isCorrect;
+    op2.value = Questions[id].a[1].isCorrect;
+    op3.value = Questions[id].a[2].isCorrect;
+    op4.value = Questions[id].a[3].isCorrect;
+    
+    var selected = "";
+    
+    // Show selection for op1
+    op1.addEventListener("click", () => {
+        op1.style.backgroundColor = "lightgoldenrodyellow";
+        op2.style.backgroundColor = "lightskyblue";
+        op3.style.backgroundColor = "lightskyblue";
+        op4.style.backgroundColor = "lightskyblue";
+        selected = op1.value;
+    })
+    
+    // Show selection for op2
+    op2.addEventListener("click", () => {
+        op1.style.backgroundColor = "lightskyblue";
+        op2.style.backgroundColor = "lightgoldenrodyellow";
+        op3.style.backgroundColor = "lightskyblue";
+        op4.style.backgroundColor = "lightskyblue";
+        selected = op2.value;
+    })
+    
+    // Show selection for op3
+    op3.addEventListener("click", () => {
+        op1.style.backgroundColor = "lightskyblue";
+        op2.style.backgroundColor = "lightskyblue";
+        op3.style.backgroundColor = "lightgoldenrodyellow";
+        op4.style.backgroundColor = "lightskyblue";
+        selected = op3.value;
+    })
+    
+    // Show selection for op4
+    op4.addEventListener("click", () => {
+        op1.style.backgroundColor = "lightskyblue";
+        op2.style.backgroundColor = "lightskyblue";
+        op3.style.backgroundColor = "lightskyblue";
+        op4.style.backgroundColor = "lightgoldenrodyellow";
+        selected = op4.value;
+    })
+    
+    // Grabbing the evaluate button
+    const evaluate = document.getElementsByClassName("evaluate");
+    
+    // Evaluate method
+    evaluate[0].addEventListener("click", () => {
+        if (selected == "true") {
+            result[0].innerHTML = "True";
+            result[0].style.color = "green";
+        } else {
+            result[0].innerHTML = "False";
+            result[0].style.color = "red";
+        }
+    })
+    }
+    
+    if (start) {
+    iterate("0");
+    }
+    
+    // Next button and method
+    const next = document.getElementsByClassName('next')[0];
+    var id = 0;
+    
+    next.addEventListener("click", () => {
+    start = false;
+    if (id < 2) {
+        id++;
+        iterate(id);
+        console.log(id);
+    }
+    
+    })
+    
+</script>
 </html>
