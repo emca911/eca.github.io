@@ -55,13 +55,7 @@
   	 			<input type="radio" id="culture" name="q3" value="culture">
   				<label for="culture">Is the behavior a result of a cultural difference?</label><br><br>
 			</div>
-		
-			<!--name of student-->
-  			<label for="fname">First name:</label><br>
-  			<input type="text" id="fname" name="fname"><br><br>
-  			<label for="lname">Last name:</label><br>
-  			<input type="text" id="lname" name="lname"><br><br>
-						
+			
 			<!--submit form-->
 			<input type = "button" onclick = "quizGrade()" value = "Submit Quiz">
 		</form> 
@@ -71,32 +65,28 @@
     		function quizGrade() {
             
 			/*form and question variables */
-            var question1, question2, question3, grade1, grade2, grade3, total, wrong;
-            fname = document.quizForm.fname.value;
-			lname = document.quizForm.lname.value;
-            question1 = document.quizForm.question1.value;
-            question2 = document.quizForm.question2.value;
-			question3 = document.quizForm.question3.value;
-			question4 = document.quizForm.question4.value;
-			question5 = document.quizForm.question5.value;
+          		var question1, question2, question3, grade1, grade2, grade3, total, wrong;
+            		question1 = document.quizForm.q1.value;
+           		question2 = document.quizForm.q2.value;
+			question3 = document.quizForm.q3.value;
 			
 			
 			 /*quiz grading */
-			if (question1 == "take away"){ 
+			if (q1 == "take away"){ 
 			grade1=1;
 			}
 			else{
 			grade1=0
 			document.getElementById("results1").innerHTML =  " #1 ";	
 			}
-			if (question2 == "b"){ 
+			if (q2 == "b"){ 
 			grade2=1;
 			}
 			else{
 			grade2=0
 			document.getElementById("results2").innerHTML =  " #2 ";
 			}
-			if (question3 == "rewards"){ 
+			if (q3 == "rewards"){ 
 			grade3=1;
 			}
 			else{
@@ -106,7 +96,7 @@
  			total = grade1 + grade2 + grade3;
             
 			/*display results */
-			document.getElementById("Output").innerHTML = fname +" " + lname + " congrats! you scored " + total + " out of 3";
+			document.getElementById("Output").innerHTML = " congrats! you scored " + total + " out of 3";
 			}		
 		</script>      
 	</div>
@@ -120,7 +110,5 @@
 		<p id ="results1" style="font-size:150%;"> </p>
 		<p id ="results2" style="font-size:150%;"> </p>
 		<p id ="results3" style="font-size:150%;"> </p>
-		<p id ="results4" style="font-size:150%;"> </p>
-		<p id ="results5" style="font-size:150%;"> </p>
 	</div>
 </html>
