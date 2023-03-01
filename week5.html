@@ -12,38 +12,115 @@
 		<div id= "container">
 			<div id="banner"><center><h2>Elise Cruz Aragon | Web Programming I</h2></center>
 			</div>
-<html>
-   <head>   
-      <script type = "text/javascript">
-         function changeittoSpanish() {
-            /*document.write (name + " is " + age + " years old."); */
-            var name, age;
+<div class="quiz_container">
+		<!--ESE QUIZ-->
+		<h1>How Ready Are You For the FTCE ESE?</h1>
+		<form name = "quizForm" >
+		
+			<!--question1-->
+			<p>The ''fly the nest'' approach allows for teachers to do which of the following when scaffolding instruction?</p>
+			<div class="radio-button">
+  				<input type="radio" id="motivate" name="q1" value="motivate">
+  				<label for="motivate">motivate students through simple concepts</label><br>
+		  		<input type="radio" id="take away" name="q1" value="take away">
+  				<label for="take away">slowly take away support</label><br>
+				<input type="radio" id="chunking" name="q1" value="chunking">
+ 				<label for="chunking">chunking concepts together</label><br>
+		  		<input type="radio" id="model" name="q1" value="model">
+  				<label for="model">model behaviors to show students what is expected</label><br><br>
+			</div>	
+		
+			<div class="radio-button">
+			<!--question2-->
+				<p>Which of the sections of "IDEA" sets the guidelines for an individualized education plan or IEP?</p>
+	  			<input type="radio" id="A" name="q2" value="A">
+  				<label for="A">Part Am</label><br>
+  				<input type="radio" id="B" name="q2" value="B">
+  				<label for="B">Part B</label><br>
+				<input type="radio" id="C" name="q2" value="C">
+  				<label for="C">Part C</label><br>
+  	 			<input type="radio" id="D" name="q3" value="D">
+  				<label for="D">Part D</label><br><br>
+			</div>
+	
+			<div class="radio-button">
+			<!--question3-->
+				<p>When a teacher considers the validity of a behavior to determine if it is problematic enough to take action, which of the following questions should the teacher not ask about the behavior?</p>
+	  			<input type="radio" id="rewards" name="q3" value="rewards">
+  				<label for="rewards">Will a reward system eliminate the behavior?</label><br>
+  				<input type="radio" id="impede" name="q3" value="impede">
+  				<label for="impede">Does the behavior impede on the student's learning?</label><br>
+				<input type="radio" id="interventions" name="q3" value="interventions">
+  				<label for="interventions">Have appropriate interventions been attempted?</label><br>
+  	 			<input type="radio" id="culture" name="q3" value="culture">
+  				<label for="culture">Is the behavior a result of a cultural difference?</label><br><br>
+			</div>
+		
+			<!--name of student-->
+  			<label for="fname">First name:</label><br>
+  			<input type="text" id="fname" name="fname"><br><br>
+  			<label for="lname">Last name:</label><br>
+  			<input type="text" id="lname" name="lname"><br><br>
+						
+			<!--submit form-->
+			<input type = "button" onclick = "quizGrade()" value = "Submit Quiz">
+		</form> 
+	
+		<!--function to grade quiz and display results-->
+		<script type = "text/javascript">
+    		function quizGrade() {
             
-            name = document.simpleForm.fname.value;
-            age = document.simpleForm.ageNum.value;
-
-            document.getElementById("Output").innerHTML = "Hello, my name is " + name + 
-                " and I am " + age + " years old.";
-
-         }
-      </script>      
-   </head>
-   
-   <body>
-      <p>Click the following button to call the function</p>      
-      <form name = "simpleForm">
-          
-        <br>
-        Name
-        <br>
-        <input type="text" id="fname" name="fname"><br>
-        <br>
-        Age
-        <br>
-        <input type="number" name="ageNum" min="0" size="3" placeholder="0"><br>
-        <br>
-        <input type = "button" onclick = "sayHello()" value = "Say Hello">
-      </form>      
-      <p id = "Output"> This is where the output will go. </p>
-   </body>
+			/*form and question variables */
+            var question1, question2, question3, grade1, grade2, grade3, total, wrong;
+            fname = document.quizForm.fname.value;
+			lname = document.quizForm.lname.value;
+            question1 = document.quizForm.question1.value;
+            question2 = document.quizForm.question2.value;
+			question3 = document.quizForm.question3.value;
+			question4 = document.quizForm.question4.value;
+			question5 = document.quizForm.question5.value;
+			
+			
+			 /*quiz grading */
+			if (question1 == "take away"){ 
+			grade1=1;
+			}
+			else{
+			grade1=0
+			document.getElementById("results1").innerHTML =  " #1 ";	
+			}
+			if (question2 == "b"){ 
+			grade2=1;
+			}
+			else{
+			grade2=0
+			document.getElementById("results2").innerHTML =  " #2 ";
+			}
+			if (question3 == "rewards"){ 
+			grade3=1;
+			}
+			else{
+			grade3=0
+			document.getElementById("results3").innerHTML =  " #3 ";
+			}
+ 			total = grade1 + grade2 + grade3;
+            
+			/*display results */
+			document.getElementById("Output").innerHTML = fname +" " + lname + " congrats! you scored " + total + " out of 3";
+			}		
+		</script>      
+	</div>
+	
+	<!--display results -->
+	<div class="img_container">
+		<img src = "images/periodic.jpg"><br><br>
+		<!--results displayed-->
+		<p id ="Output" style = "font-size: 200%;">Quiz Results:</p>
+		<p style="font-size:150%;"> Questions wrong:</p>
+		<p id ="results1" style="font-size:150%;"> </p>
+		<p id ="results2" style="font-size:150%;"> </p>
+		<p id ="results3" style="font-size:150%;"> </p>
+		<p id ="results4" style="font-size:150%;"> </p>
+		<p id ="results5" style="font-size:150%;"> </p>
+	</div>
 </html>
