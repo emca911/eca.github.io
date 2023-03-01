@@ -6,25 +6,29 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
-		
-        <meta charset="UTF-8">
     </head>
-    <body>
-       
-<html>
-
 <body>
-  <h1>temperature converter</h1>
 
-  <div id="inputs">
-    <input id="cInput"  placeholder="celcius"/>
-    <input id="fInput" placeholder="farenheit"/>
+	/* a simple converter. i tried using the formula you created in class, but it was really hard to get the value to do the addition and multiplication, it would only work if i plugged in the value of zero */
+	
+<h2>temperature converter</h2>
+<p>it's gettin hot in here (change fahrenheit to kelvin)</p>
 
-  </div>
-  <button id="submit">Convert</button>
+<p>
+  <label>fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+</p>
+<p>kelvin: <span id="outputKelvin"></span></p>
 
-  <h1 id="result">Result:</h1>
+<script>
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputKelvin").innerHTML=((valNum-32)/1.8)+273.15;
+}
+</script>
 
-  <script src="ctof.js"></script>
+</body>
+</html>
+
 </body>
 </html>
