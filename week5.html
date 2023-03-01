@@ -10,15 +10,55 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Fahrenheit to Kelvin</h1>
-	    <----this is the input for kelvin to fahrenheit and vice versa. i had to load the js on a different page because i couldn't get the formula to work--->
-        <div id="inputs">
-            <input id="kInput" placeholder="kelvin"/>
-            <input id="fInput" placeholder="farenheit"/>
-        </div>
-        <button id="submit">Convert</button>
-        <h1 id="result">Result:</h1>
-        <script src="kelvin.js"></script>
+        <script type="text/javascript">
+             /* a form to figure out fahrenheit to kelvin, because kelvin can't wait */
+
+             function HowHot (degreesKelvin)
+             {
+                 var degree_fah;
+                 var name;
+				 
+                 name=document.degrees_kel.fname.value + " " +  document.degrees_kel.lname.value;
+            
+                 /* formula for f to k to (f - 459.67)*5/9 */
+
+                degrees_fah = (document.speed_form.MaxAuth.value + 459.67) * 5 / 9 ;
+               /*degrees_fah = degrees_fah + degrees_fah * degreesKelvin;*/
+                
+                
+                //alert(" in kelvin, it's " + degrees_fah + " degrees hot ");
+                //write it to the page;
+
+                document.getElementById("TotalHotness").innerHTML = "<h3>" + name + ", it's getting hot in here, like " + track_speed + " degrees kelvin hot.</h3>";
+
+                } 
+
+        </script>
+    </head>
+    
+    <body>
+        <!-- kelvins on their way -->
+        <div class="TAW">
+        <h2>Fahrenheit to Kelvin</h2>
+        <p>Choose your level of heat</p>
+        <form name="degrees_kel">
+        <br>
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname">
+        <br>
+        <br>
+        Enter the degrees Fahrenheit you want to see as Kelvin<br>
+        <!-- -->
+        <!-- -->
+        <input type="number" name="MaxAuth" min="0" size="3" placeholder="0">
+        <br><br>
+        <input type="button" name="button" onClick="HowFar()" value="Click to Calculate">
+
+        <p id="TotalHotness"> Nope, too hot.</p>
+    </form>
+    </div>
     </body>
 </html>
    
