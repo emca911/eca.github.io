@@ -10,14 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
     
-        /*  global variables: array of waiting list so far, number in waiting list. Arrays see modules 8 & 9 */
+        /*  wait list for school, i included 3 local schools in my area */
         
           var waitingLIst  = ["e cruz, 20, female, eca@gmail.com, 813 744 8383, 1700 e bloomingdale ave, durant, 10"];
           var numWaiting = 1;
-    
-        /*  
-        Assemble all the form inputs into string and put into a waiting list.
-        */
     
         
         function processSchoolChoice ()
@@ -28,7 +24,7 @@
             prefs = document.schoolchoice-form.school-choice.value + " ," + document.schoolchoice-form.upcoming-grade.value + 
             " ," + document.schoolchoice-form.age.value + " ," + document.schoolchoice-form.gender.value;
         
-            /* add it onto the array of the waiting list */
+            /* add to wait list */
             waitingLIst[numWaiting] = prefs;
             numWaiting = numWaiting +1;
         
@@ -90,6 +86,8 @@
         <input type="button" name="button" onclick=" info_DSHS()"value="Click for Durant Info"/>
         <br>
         
+<!-- 	/* i added the buttons to call for more school info here, but i don't know if it looks good */ -->
+
         <label for="school-choice"> School: </label>
         <select id="school-choice" name="school-choice" required>
         <option value="choose-school">Choose Your School</option>
@@ -110,6 +108,8 @@
         <input type="submit" value="Submit">
     </form>
     
+         <!-- /*  wait list info should populate here  */ -->
+            
     <h2>Wait List</h2>
     <br>
     <p id = "waitingList">Return Info for Wait List</p>
