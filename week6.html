@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+<!-- Functions needed to run the script  -->
 <script>
 var prosepoetry = {
 	  number:  "5",
@@ -69,14 +70,14 @@ function recommend_flower ()
 <body>
 
 <div class="row"> <p id="best">BEST Standards - Reading</p></div>
- 
+<!-- Reading Standards, Prose and Poetry  -->
 <div class="column"> <button onclick="document.getElementById('best').innerHTML = prosepoetry.describeStandard()">Reading Prose and Poetry</button></div>
-
+<!-- Reading Standards, Informational Texts  -->
 <div class="column"> <button onclick="document.getElementById('best').innerHTML = informational.describeStandard()">Reading Informational Texts</button></div>
-
+<!-- Reading Standards, Across Genres  -->
 <div class="column"> <button onclick="document.getElementById('best').innerHTML = genres.describeStandard()">Reading Across Genres</button></div>
 
-<!--   -->
+<!-- Okay, so while I was making this I realized that what I need this to do miiiiight be more complex than what I can actually do right now. There's a lot of different standards that I would like to break down, but I want to add something here that gives you a pop up button once you've selected the first function... but I don't know how to do that lol so I'm saving it for the next hw!!  -->
 
 </body>
 </html>
