@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html>
+<head>
+<script>
+var prosepoetry = {
+	  number:  "5",
+	  firstType: "Literary",
+    lastType: "Poetry",
+    
+  describeStandard: function ()
+  { 
+  return ("This cluster has " + this.number + " sets of substandards. They range from " + this.firstType + " through " + this.lastType + ".");
+  }
+};
+
+var informational = {
+	  number:  "4",
+	  firstType: "Structure",
+    lastType: "Argument",
+    
+  describeStandard: function ()
+  { 
+    return ("This cluster has " + this.number + " sets of substandards. They range from " + this.firstType + " through " + this.lastType + ".");
+  }
+};
+
+var genres = {
+	  number:  "4",
+	  firstType: "Interpreting Figurative Language",
+    lastType: "Understanding Rhetoric",
+    
+  describeStandard: function ()
+  { 
+    return ("This cluster has " + this.number + " sets of substandards. They range from " + this.firstType + " through " + this.lastType + ".");
+  }
+};
+
+function recommend_flower ()
+{
+/*   */
+
+}
+
+</script>
+		<title>Elise Cruz Aragon | Web Programming I</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
+        <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 600px; 
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<div class="row"> <p id="best">BEST Standards - Reading</p></div>
+ 
+<div class="column"> <button onclick="document.getElementById('best').innerHTML = prosepoetry.describeStandard()">Reading Prose and Poetry</button></div>
+
+<div class="column"> <button onclick="document.getElementById('best').innerHTML = informational.describeStandard()">Reading Informational Texts</button></div>
+
+<div class="column"> <button onclick="document.getElementById('best').innerHTML = genres.describeStandard()">Reading Across Genres</button></div>
+
+<!--   -->
+
+</body>
+</html>
