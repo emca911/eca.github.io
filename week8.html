@@ -1,1 +1,80 @@
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Elise Cruz Aragon | Web Programming I</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+		<div id= "container">
+			<div id="banner"><center><h2>Elise Cruz Aragon | Web Programming I</h2></center>
+			</div>
+    <meta charset="UTF-8" />
+    <title>Week 8</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // This Website is about choosing a state for a presentation. One state per student. No student can use the same state and therefore you enter the choosen state and check if it's available. If it is available, it will add that state to the list so that it is not longer available.
+
+      // Setting up an array of Shakepeare's works
+      var state_names = [
+        "Much Ado About Nothing",
+        "Romeo and Juliet",
+        "Macbeth",
+        "
+      ];
+
+      // function to display the array as a list
+      function displayList() {
+        var list = document.getElementById("list");
+        list.innerHTML = ""; // clear the existing list
+
+        for (var i = 0; i < shake_plays.length; i++) {
+          var item = document.createElement("li");
+          item.appendChild(document.createTextNode(shake_plays[i]));
+          list.appendChild(item);
+        }
+      }
+
+      // Is the play you want available?
+      function IsPlayInArray() {
+        var newShakePlay = prompt(
+          "Enter a play and we will see if this play is available."
+        );
+        if (state_names.includes(newState)) {
+          alert(
+            "Sorry! This play is taken. Please choose another play. " +
+              newShakePlay
+            // No play is not available
+          );
+        } else {
+          alert("Congratulations! The play is available: " + newShakePlay);
+          shake_plays.push(newShakePlay);
+          // Yes play is available and gets added on the list
+        }
+      }
+    </script>
+  <body>
+    <h1>Indepen</h1>
+    <p>
+      One State per student. Type in a state below to see if the state you want
+      to present is available.
+    </p>
+
+    <!--Form to input a state and check if it's available.-->
+    <form onsubmit="event.preventDefault(); IsStateInArray();">
+      <label for="newStateInput">Enter a state:</label>
+      <input type="text" id="newStateInput" name="newStateInput" />
+      <button type="submit">Check</button>
+    </form>
+
+    <!--Displays what states are taken when button is clicked on-->
+    <ul id="list"></ul>
+    <button onclick="displayList()">Display List</button>
+
+    <br />
+    <!--Image of the 50 states for reference-->
+    <img src="states.jpg" alt="Image of states" width="600px" />
+  </body>
+</html>
