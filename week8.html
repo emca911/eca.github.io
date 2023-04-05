@@ -9,16 +9,16 @@
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 		<div id= "container">
-			<div id="banner">
+			<div id="banner"><center><h2>Elise Cruz Aragon | Web Programming I</h2></center>
 			</div>
     <meta charset="UTF-8" />
     <title>Week 8</title>
     <link rel="stylesheet" href="style.css" />
     <script>
-      // This Website is about choosing a state for a presentation. One state per student. No student can use the same state and therefore you enter the choosen state and check if it's available. If it is available, it will add that state to the list so that it is not longer available.
+      // Quick website to pick a Shakespearean play to make a 3-d model of a scene.
 
       // Setting up an array of Shakepeare's works
-      var shake_plays = [
+      var shake_play = [
         "Much Ado About Nothing",
         "Romeo and Juliet",
         "Macbeth",
@@ -37,7 +37,7 @@
         var list = document.getElementById("list");
         list.innerHTML = "";
 
-        for (var i = 0; i < shake_plays.length; i++) {
+        for (var i = 0; i < shake_play.length; i++) {
           var item = document.createElement("li");
           item.appendChild(document.createTextNode(shake_plays[i]));
           list.appendChild(item);
@@ -45,11 +45,11 @@
       }
 
       // Is the play you want available?
-      function IsPlayInArray() {
+      function IsSPlayInArray() {
         var newPlay = prompt(
           "Enter a play and we will see if this play is available."
         );
-        if (shake_plays.includes(newPlay)) {
+        if (shake_play.includes(newPlay)) {
           alert(
             "Sorry! This play is taken. Please choose another play. " +
               newPlay
@@ -57,7 +57,7 @@
           );
         } else {
           alert("Congratulations! The play is available: " + newPlay);
-          shake_plays.push(newPlay);
+          shake_play.push(newPlay);
           // Hands in the air, this play is all yours
         }
       }
@@ -69,9 +69,9 @@
     </p>
 
     <!--Form to choose your play-->
-    <form onsubmit="event.preventDefault(); IsStateInArray();">
-      <label for="newStateInput">Enter a state:</label>
-      <input type="text" id="newStateInput" name="newStateInput" />
+    <form onsubmit="event.preventDefault(); IsSPlayInArray();">
+      <label for="newPlayInput">Pick your play:</label>
+      <input type="text" id="newPlayInput" name="newPlayInput" />
       <button type="submit">Check</button>
     </form>
 
