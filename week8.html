@@ -8,28 +8,17 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
-		<div id= "container">
-			<div id="banner"><center><h2>Elise Cruz Aragon | Web Programming I</h2></center>
-			</div>
     <meta charset="UTF-8" />
     <title>Week 8</title>
     <link rel="stylesheet" href="style.css" />
     <script>
-      // Quick website to pick a Shakespearean play to make a 3-d model of a scene.
+      // A website to choose a Shakespearean play for a project. Once the play is picked, it's on the list and can't be chosen again.
 
       // Setting up an array of Shakepeare's works
-      var shake_play = [
+      var ws_play = [
         "Much Ado About Nothing",
         "Romeo and Juliet",
         "Macbeth",
-        "Twelfth Night",
-        "As You Like It"
-        "Julius Ceasar",
-        "King Lear",
-        "A Midsummer Night's Dream",
-        "Richard III",
-        "Othello",
-        "The Taming of the Shrew",
       ];
 
       // function to display the array as a list
@@ -37,9 +26,9 @@
         var list = document.getElementById("list");
         list.innerHTML = "";
 
-        for (var i = 0; i < shake_play.length; i++) {
+        for (var i = 0; i < ws_play.length; i++) {
           var item = document.createElement("li");
-          item.appendChild(document.createTextNode(shake_plays[i]));
+          item.appendChild(document.createTextNode(ws_play[i]));
           list.appendChild(item);
         }
       }
@@ -49,7 +38,7 @@
         var newPlay = prompt(
           "Enter a play and we will see if this play is available."
         );
-        if (shake_play.includes(newPlay)) {
+        if (ws_play.includes(newPlay)) {
           alert(
             "Sorry! This play is taken. Please choose another play. " +
               newPlay
@@ -57,7 +46,7 @@
           );
         } else {
           alert("Congratulations! The play is available: " + newPlay);
-          shake_play.push(newPlay);
+          ws_play.push(newPlay);
           // Hands in the air, this play is all yours
         }
       }
