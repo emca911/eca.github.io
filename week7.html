@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Week 7</title>
+<title>Elise Cruz Aragon | Week 7</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2 family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
     <style>
         #container {
             margin-top: 5%;
@@ -55,27 +56,27 @@
             }
             // return recommendation text
             this.recommend = function () {
-                // if NONE of symptoms are present but they have been potentially exposed
+                // if they only chose ONE snack option
                 if (!(this.snack1 || this.snack2 || this.snack3) && this.sweet) {
                     return "no snacks yet, have an apple";
                 }
-                // if all three symptoms and any one of the risk factors are present
+                // if all three snacks are picked and any one of the snack factors are present
                 if (this.snack1 && this.snack2 && this.snack3 && (this.salty || this.sweet)) {
                     if (this.age == 26) { // snacks are vital at this age
                         return "snacks are life, get to your nearest vending machine for some funyuns";
                     } else {
                         return "when you get a chance, drive to wawa for a snack cake";
                     }
-                // if all three symptoms are present but NOT risk factors
+                // if all three snack choices are present but they DON'T care about which kind it is
                 } else if (this.snack1 && this.snack2 && this.snack3 && !(this.salty || this.sweet)) {
                     return "look in the pantry and find something there";              
-                // if any of the symptoms are present and they have any risk factors
+                // if any of the snacks are needed AND they don't care about what kind of snack
                 } else if ((this.snack1 || this.snack2 || this.snack3) && (this.salty || this.sweet) ) {
                     return "did you know that uber eats delivers groceries? get some takis";
-                // if they have ANY symptoms at all (but not risk factors)
+                // if they have like the choices and aren't picky (no salty/sweet chosen)
                 } else if (this.snack1 || this.snack2 || this.snack3) {
                     return "locate your local publix and stay tuned ";       
-                } else { // low virus threat
+                } else { // low snack need
                     return "NO SNACKS, GO FOR A RUN";
                 }
             }
