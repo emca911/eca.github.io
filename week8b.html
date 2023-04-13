@@ -1,1 +1,25 @@
-
+	<head>
+		<title>Elise Cruz Aragon | Web Programming I</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
+	</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - for...of loop</title>
+</head>
+<body>
+    <h2>Using for...of loop in javascript to iterate through array.</h2>
+    <p id="output"></p>
+    <script>
+        var fruits = ["Apple", "Banana", "Carrot", "Guava", "Orange"];
+        let i;
+        for (i of fruits) { // i represent 1 value of fruit 
+            document.getElementById("output").innerHTML += i + "<br>";
+        }
+    </script>
+</body>
+</html>
