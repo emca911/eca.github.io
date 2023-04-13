@@ -89,13 +89,13 @@
             // get output object
             var out = document.getElementById("output");
             // instantiate patient object
-            var patient = new Patient(fm);
+            var snacks = new Snacks(fm);
             //console.log("Debug:" + JSON.stringify(patient));
 
             // set background color using patient object severity method
-            out.style.background = patient.severity();
+            out.style.background = snacks.severity();
             // display recommendations based on input values using diagnose method
-            out.innerHTML = patient.diagnose();
+            out.innerHTML = snacks.diagnose();
         }
     </script>
 </head>
