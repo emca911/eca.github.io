@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Elise Cruz Aragon</title> <!-- i struggled with this, so i used annette's a inspo and repurpose her main page so i could focus on the content i want to build. this was much more user friendly than the one i originally created, largely because it was really paired dow. it made it so i could spend as much time on the javascript and get that perfect -->
+        <link rel="stylesheet" href="css/final1.css"> <!-- finally updated lol -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For responsive webapge styling -->
+        <meta charset="utf-8">
+
+        <script>
+            /*JS for the side nav - from https://www.w3schools.com/howto/howto_js_sidenav.asp*/
+                /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+                function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                }
+
+                /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+                function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                }
+
+        </script>
+    </head>
+
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="findex.html">Home</a>
+            <a href="discover.html">Discover Poetic Devices</a>
+            <a href="edit.html">Edit a Poem</a>
+            <a href="yourturn.html">Create Your Own</a>
+            <a href="quiz.html">Take the Quiz</a>
+            <a href="feedback.html">Feedback</a>
+          </div>
+          
+          <!-- Use any element to open the sidenav -->
+          <span onclick="openNav()"><img src="images/final/menu.png" style="height: 30px;"></span>
+          
+          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+          <div id="main">
+            
+            <div class="content">
+            <h1><img src="images/final/heading.png" style="height: 100px; float: inline-start;"> Poetry for Dummies</h1> <!--Going to be a make your own poetry focus (or editing of paragraphs, I haven't decided. Either way, the goal is to have a reference for the user, then a "we do" section that lets them practice in a controlled environment, and a "you do" where the work is filled in by them.-->
+                <div class="row questions">
+                    <div class="col-4 col-s-12" style="text-align: center; background-color: #ffb4a2; height: 300px;">
+                        <img src="poems.png" style="height: 100px;">
+                        <h2>Confused on how to make a poem a poem?<br></h2>Go to <img src="poeticdevices.png" style="height: 12px;"> to learn about elements of poetry!</p>
+                    </div>
+                    <div class="col-4 col-s-12" style="text-align: center; background-color: #e5989b; height: 300px;">
+                        <img src="editapoem.png" style="height: 100px;">
+                        <h2>Want to practice before you take the leap? </h2><p>We got you! <br>Choose <img src="editor.png" style="height: 12px;"> to practice on a poem!</p>
+                    </div>
+                    <div class="col-4 col-s-12" style="text-align: center; background-color: #b5838d; height: 300px;">
+                        <img src="quiz.png" style="height: 100px;">
+                        <h2>Ready to test your knowledge?</h2><p>Take our short quiz! <br>Find out here <img src="images/final/menu.png" style="height: 12px;"> how much you already know!</p>
+                    </div>
+              
+        </div></div>
+    <br><br><br>
+    
+    </div></body>
+</html>
