@@ -9,14 +9,13 @@
 h1 {
     font-size: 4em;
     color: #6d6875;
-    text-shadow:black 1px 1px;
     font-family: 'Poppins', sans-serif;
     margin-top: 0em;
 }
 
 h2 {font-family: 'Poppins', sans-serif; }
 
-h3 {font-family: 'Poppins', cursive; }
+h3 {font-family: 'Poppins', sans-serif; }
 
 p, label, button, a {font-family: 'Poppins', sans-serif;}
 
@@ -74,7 +73,8 @@ html { background-color: #fcf3e7;}
 /* Style the input fields */
 input, select, option {
   padding: 10px;
-  font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+font-family: 'Sofia Sans', sans-serif;
 
 }
 
