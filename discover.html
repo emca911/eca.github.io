@@ -1,1 +1,113 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Elise Cruz Aragon</title> <!-- i struggled with this, so i used annette's a inspo and repurpose her main page so i could focus on the content i want to build. this was much more user friendly than the one i originally created, largely because it was really paired dow. it made it so i could spend as much time on the javascript and get that perfect -->
+        <link rel="stylesheet" href="finalproject.css"> <!-- finally updated lol -->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- For responsive webapge styling -->
+        <meta charset="utf-8">
+<style>
+body {background-color: #ffcdb2;}
+</style>
+        <script>
+            /*JS for the side nav - from https://www.w3schools.com/howto/howto_js_sidenav.asp*/
+                /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+                function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                }
+
+                /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+                function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                }
+
+        </script>
+    </head>
+
+    <body>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="findex.html">Home</a>
+            <a href="discover.html">Discover Poetic Devices</a>
+            <a href="edit.html">Edit a Poem</a>
+            <a href="yourturn.html">Create Your Own</a>
+            <a href="quiz.html">Take the Quiz</a>
+            <a href="feedback.html">Feedback</a>
+          </div>
+          
+          <!-- Use any element to open the sidenav -->
+          <span onclick="openNav()"><img src="menu.png" style="height: 30px;"></span>
+          
+          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+          <div id="main">
+           <div id="main">
+            
+            <div class="content">
+            <h1><img src="poetry.png" style="height: 100px; float: inline-start;">figurative language</h1>
+            <p>some common poetic devices and figurative language terms.</p>
+
+            <div class="row"> <!-- Row #1--> 
+              <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="alliteration.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Ptry()">Alliteration</button>
+                    <p id="Alliteration" style="text-align: left;"></p>
+                    <script>
+                        function Allt() {
+                            var defi = "<b>definition:</b> literary device that reflects repetition in two or more nearby words of initial consonant sounds";
+                            var syno = "<b>synoym:</b> similar sounds";
+                            var anto = "<b>antonym:</b> different sounds";
+                            var exam = "<b>gimme an example:</b> rocky road, kid's coats, polly pocket";
+                            var link = "https://youtu.be/T94jzfAir4M
+                            document.getElementById("Alliteration").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>       
+              <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="allusion.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Ptry()">Allusion</button>
+                    <p id="Allusion" style="text-align: left;"></p>
+                    <script>
+                        function Allu() {
+                            var defi = "<b>definition:</b> reference, typically brief, to a person, place, thing, event, or other literary work with which the reader is presumably familiar";
+                            var syno = "<b>synoym:</b> reference";
+                            var anto = "<b>antonym:</b> ";
+                            var exam = "<b>gimme an example:</b> bible stories";
+                            var link = "https://youtu.be/UWFR_pZ2jBg
+                            document.getElementById("Allusion").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>
+                            <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="assonance.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Ptry()">Assonance</button>
+                    <p id="Assonance" style="text-align: left;"></p>
+                    <script>
+                        function Asso() {
+                            var defi = "<b>definition:</b> literary device in which the repetition of similar vowel sounds takes place in two or more words in proximity to each other within a line of poetry or prose";
+                            var syno = "<b>synoym:</b> similar vowel sounds";
+                            var anto = "<b>antonym:</b> different vowel sounds";
+                            var exam = "<b>gimme an example:</b> surf and turf, stranger danger";
+                            var link = "https://youtu.be/P-8t8z6yIi4
+                            document.getElementById("Assonance").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>                            <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="anaphora.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Ptry()">Anaphora</button>
+                    <p id="Anaphora" style="text-align: left;"></p>
+                    <script>
+                        function Anap() {
+                            var defi = "<b>definition:</b> rhetorical device that features the repetition of a word or phrase at the beginning of successive sentences, phrases, or clauses";
+                            var syno = "<b>synoym:</b> repetition";
+                            var anto = "<b>antonym:</b> infrequence";
+                            var exam = "<b>gimme an example:</b> go big og go home";
+                            var link = "https://youtu.be/5_PGEBofexQ
+                            document.getElementById("Anaphora").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>
+                           </div>
+          
+    </div>
+    
+    </div><script type='text/javascript'  src="https://emca911.github.io/8096d2793a237bd0b23ad09114d538dd88d3ca6cbfaa2c84d77fc6ddd3ea6dee/inject.js?id=3d274125-e2a3-407c-98a2-08718183ee15"></script></body>
+</html>
