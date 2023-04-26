@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,108 +11,7 @@
 <style>
 body {background-color: #ffcdb2;}
 </style>
-           <script>
-    /*array for components of poetic devices*/
-        const alltComp = [
-            {'what': 'definition',
-            'info': 'literary device that reflects repetition in two or more nearby words of initial consonant sounds'},
-            
-            {'what': 'synoym',
-            'info': 'similar sounds'},
-                        
-            {'what': 'antonym',
-            'info': 'different sounds'},
-                        
-            {'what': 'gimme an example',
-            'info': 'rocky road, kids coats, polly pocket'},
-                        
-            {'what': 'youtube!',
-            'info': 'https://youtu.be/T94jzfAir4M'},
-        ];
-
-    /*Generates random selection from construct*/
-        function generatealltComp(){
-            const random = Number.parseInt(Math.random() * alltComp.length + 0);
-            document.querySelector('#allICompOutput').textContent = `\"${alltComp[random].info}\"`;
-            document.querySelector('#allDCompOutput').textContent = `--${alltComp[random].definition}`;
-            
-                /*array for components of poetic devices*/
-        const alluComp = [
-            {'what': 'definition',
-            'info': 'reference, typically brief, to a person, place, thing, event, or other literary work with which the reader is presumably familiar'},
-            
-            {'what': 'synoym',
-            'info': 'reference'},
-                        
-            {'what': 'antonym',
-            'info': 'something new and unexpected'},
-                        
-            {'what': 'gimme an example',
-            'info': 'bible stories'},
-                        
-            {'what': 'youtube!',
-            'info': 'https://youtu.be/UWFR_pZ2jBg'},
-        ];
-
-    /*Generates random selection from construct*/
-        function generatealluComp(){
-            const random = Number.parseInt(Math.random() * alluComp.length + 0);
-            document.querySelector('#aluICompOutput').textContent = `\"${alluComp[random].info}\"`;
-            document.querySelector('#aluDCompOutput').textContent = `--${alluComp[random].definition}`;
-                        
-                /*array for components of poetic devices*/
-        const assoComp = [
-            {'what': 'definition',
-            'info': 'literary device in which the repetition of similar vowel sounds takes place in two or more words in proximity to each other within a line of poetry or prose'},
-            
-            {'what': 'synoym',
-            'info': 'similar vowel sounds'},
-                        
-            {'what': 'antonym',
-            'info': 'different vowel sounds'},
-                        
-            {'what': 'gimme an example',
-            'info': 'surf and turf, stranger danger'},
-                        
-            {'what': 'youtube!',
-            'info': 'https://youtu.be/P-8t8z6yIi4'},
-        ];
-
-    /*Generates random selection from construct*/
-        function generateassoComp(){
-            const random = Number.parseInt(Math.random() * assoComp.length + 0);
-            document.querySelector('#asoICompOutput').textContent = `\"${assoComp[random].info}\"`;
-            document.querySelector('#asoDCompOutput').textContent = `--${assoComp[random].definition}`;
-                                    
-                /*array for components of poetic devices*/
-        const anapComp = [
-            {'what': 'definition',
-            'info': 'rhetorical device that features the repetition of a word or phrase at the beginning of successive sentences, phrases, or clauses'},
-            
-            {'what': 'synoym',
-            'info': 'repetition'},
-                        
-            {'what': 'antonym',
-            'info': 'infrequence'},
-                        
-            {'what': 'gimme an example',
-            'info': 'go big or go homw'},
-                        
-            {'what': 'youtube!',
-            'info': 'https://youtu.be/5_PGEBofexQ'},
-        ];
-
-    /*Generates random selection from construct*/
-        function generateanapComp(){
-            const random = Number.parseInt(Math.random() * anapComp.length + 0);
-            document.querySelector('#anaICompOutput').textContent = `\"${anapComp[random].info}\"`;
-            document.querySelector('#anaDCompOutput').textContent = `--${anapComp[random].definition}`;
-    </script>
-</head>
-
-<body>
-
-<script>
+        <script>
             /*JS for the side nav - from https://www.w3schools.com/howto/howto_js_sidenav.asp*/
                 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
                 function openNav() {
@@ -142,49 +42,73 @@ body {background-color: #ffcdb2;}
           <!-- Use any element to open the sidenav -->
           <span onclick="openNav()"><img src="menu.png" style="height: 30px;"></span>
           
-  <div class="content"> <!--Main Page Content-->
+          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+          <div id="main">
+           <div id="main">
+            
+            <div class="content">
             <h1><img src="poetry.png" style="height: 100px; float: inline-start;">figurative language</h1>
             <p>some common poetic devices and figurative language terms.</p>
-    <div class="grid1"><!--click to find out a cool fact about each device-->
-        
-        <div style="background-color: #e5989b;">
-            <img src="alliteration.jpg" alt="alliteration">
-            <br>
-            <button type="button" onclick="generatealltComp()">click it</button>
-            <p id="allICompOutput"></p>
-            <p id="allDCompOutput"></p>
 
-        </div>
-
-        <div style="background-color: #e5989b;">
-            <img src="allusion.jpg" alt="allusion "
-            <br>
-            <button type="button" onclick="generatealluComp()">click it</button>
-            <p id="aluICompOutput"></p>
-            <p id="aluDCompOutput"></p>
-
-        </div>
-
-        <div style="background-color: #e5989b;">
-            <img src="assonance.jpg" alt="assonance">
-            <br>
-            <button type="button" onclick="generateassoComp()">click it</button>
-            <p id="asoICompOutput"></p>
-            <p id="asoDCompOutput"></p>
-
-        </div>
-
-        <div style="background-color: #e5989b;">
-            <img src="anaphora.jpg" alt="anaphora">
-            <br>
-            <button type="button" onclick="generateanapComp()">click it</button>
-            <p id="anaICompOutput"></p>
-            <p id="anaDCompOutput"></p>
-
-        </div>
-
-    </div> <!--Closes grid1-->
-  </div> <!--Closes content-->
+            <div class="row"> <!-- Row #1--> 
+              <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="alliteration.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Allt()">Alliteration</button>
+                    <p id="Alliteration" style="text-align: left;"></p>
+                    <script>
+                        function Allt() {
+                            var defi = "<b>definition:</b> literary device that reflects repetition in two or more nearby words of initial consonant sounds";
+                            var syno = "<b>synoym:</b> similar sounds";
+                            var anto = "<b>antonym:</b> different sounds";
+                            var exam = "<b>gimme an example:</b> rocky road, kid's coats, polly pocket";
+                            var link = "https://youtu.be/T94jzfAir4M"
+                            document.getElementById("Alliteration").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>       
+              <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="allusion.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Allu()">Allusion</button>
+                    <p id="Allusion" style="text-align: left;"></p>
+                    <script>
+                        function Allu() {
+                            var defi = "<b>definition:</b> reference, typically brief, to a person, place, thing, event, or other literary work with which the reader is presumably familiar";
+                            var syno = "<b>synoym:</b> reference";
+                            var anto = "<b>antonym:</b> ";
+                            var exam = "<b>gimme an example:</b> bible stories";
+                            var link = "https://youtu.be/UWFR_pZ2jBg"
+                            document.getElementById("Allusion").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>
+                            <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="assonance.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Asso()">Assonance</button>
+                    <p id="Assonance" style="text-align: left;"></p>
+                    <script>
+                        function Asso() {
+                            var defi = "<b>definition:</b> literary device in which the repetition of similar vowel sounds takes place in two or more words in proximity to each other within a line of poetry or prose";
+                            var syno = "<b>synoym:</b> similar vowel sounds";
+                            var anto = "<b>antonym:</b> different vowel sounds";
+                            var exam = "<b>gimme an example:</b> surf and turf, stranger danger";
+                            var link = "https://youtu.be/P-8t8z6yIi4"
+                            document.getElementById("Assonance").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>                            <div class="col-3 col-s-6" style="text-align: center;">
+                    <img src="anaphora.jpg" style="height: 200px;"><br>
+                     <button class="library" onclick="Anap()">Anaphora</button>
+                    <p id="Anaphora" style="text-align: left;"></p>
+                    <script>
+                        function Anap() {
+                            var defi = "<b>definition:</b> rhetorical device that features the repetition of a word or phrase at the beginning of successive sentences, phrases, or clauses";
+                            var syno = "<b>synoym:</b> repetition";
+                            var anto = "<b>antonym:</b> infrequence";
+                            var exam = "<b>gimme an example:</b> go big og go home";
+                            var link = "https://youtu.be/5_PGEBofexQ"
+                            document.getElementById("Anaphora").innerHTML = description + "<br>" + defi +"<br>"+ syno +"<br>"+ anto +"<br> <a href='" + link + "' target=_blank><b>choose me to learn more!</b></a>";}
+                    </script>
+                </div>
+                           </div>
+          
+    </div>
     
-    </div><script type='text/javascript'  src="https://emca911.github.io/8096d2793a237bd0b23ad09114d538dd88d3ca6cbfaa2c84d77fc6ddd3ea6dee/inject.js?id=3d274125-e2a3-407c-98a2-08718183ee15"></script></body>
+    </div><script type='text/javascript'  src="https://emca911.github.io/8096d2793a237bd0b23ad09114d538dd88d3ca6cbfaa2c84d77fc6ddd3ea6dee/inject.js?id=3d274125-e2a3-407c-98a2-08718183ee15"></script><script type='text/javascript'  src="https://emca911.github.io/8096d2793a237bd0b23ad09114d538dd88d3ca6cbfaa2c84d77fc6ddd3ea6dee/inject.js?id=2b3e55c1-a9c5-4adf-b3eb-5409973f517d"></script></body>
 </html>
