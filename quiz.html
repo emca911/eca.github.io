@@ -23,118 +23,6 @@ body {background-color: #ffcdb2;}
                 }
 
         </script>
-        <script>
-  function buildQuiz(){
-    // variable to store the HTML output
-    const output = [];
-
-    // for each question...
-    myQuestions.forEach(
-      (currentQuestion, questionNumber) => {
-
-        // variable to store the list of possible answers
-        const answers = [];
-
-        // and for each available answer...
-        for(letter in currentQuestion.answers){
-
-          // ...add an HTML radio button
-          answers.push(
-            `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-          );
-        }
-
-        // add this question and its answers to the output
-        output.push(
-          `<div class="question"> ${currentQuestion.question} </div>
-          <div class="answers"> ${answers.join('')} </div>`
-        );
-      }
-    );
-
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
-  }
-
-  function showResults(){
-
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
-
-    // keep track of user's answers
-    let numCorrect = 0;
-
-    // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
-
-      // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-      // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers
-        numCorrect++;
-
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
-      }
-      // if answer is wrong or blank
-      else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
-      }
-    });
-
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-  }
-
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('submit');
-  const myQuestions = [
-    {
-      question: "which poetic device has the same vowel sound?",
-      answers: {
-        a: "consonance",
-        b: "assonance",
-        c: "alliteration"
-      },
-      correctAnswer: "b"
-    },
-    {
-      question: "which poetic device has the same beginning sound?",
-      answers: {
-        a: "consonance",
-        b: "assonance",
-        c: "alliteration"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "which poetic device uses repetition of words or phrases?",
-      answers: {
-        a: "alliteration",
-        b: "allusion",
-        c: "assonance",
-        d: "anaphora"
-      },
-      correctAnswer: "d"
-    }
-  ];
-
-  // Kick things off
-  buildQuiz();
-
-  // Event listeners
-  submitButton.addEventListener('click', showResults);
-})();</script>
     
     </head>
 
@@ -158,10 +46,11 @@ body {background-color: #ffcdb2;}
             <div class="content">
 <div id="quiz"></div>
 <button id="submit">Submit Quiz</button>
-<div id="results"></div></div>
+<div id="results"></div>
+<script src="lolfarts.js"></script>
               
-        </div></div>
+
     <br><br><br>
     
-    </div><script type='text/javascript'  src="https://emca911.github.io/8096d2793a237bd0b23ad09114d538dd88d3ca6cbfaa2c84d77fc6ddd3ea6dee/inject.js?id=41f01bd6-9508-459c-b1ba-73f28a7ddfcc"></script></body>
+</body>
 </html>
